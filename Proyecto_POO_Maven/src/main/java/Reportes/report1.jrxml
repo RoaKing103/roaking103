@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89397329-8d85-446d-9ca5-b847ccb5fbf5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     componentes.`codigo` AS componentes_codigo,
+     componentes.`procesador` AS componentes_procesador,
+     componentes.`marcaProce` AS componentes_marcaProce,
+     componentes.`placaMadre` AS componentes_placaMadre,
+     componentes.`fuentePoder` AS componentes_fuentePoder,
+     componentes.`fechaCreacion` AS componentes_fechaCreacion,
+     componentes.`Id_tarjetaVideo` AS componentes_Id_tarjetaVideo,
+     tarjetavideo.`id` AS tarjetavideo_id,
+     tarjetavideo.`nombre` AS tarjetavideo_nombre
+FROM
+     `tarjetavideo` tarjetavideo INNER JOIN `componentes` componentes ON tarjetavideo.`id` = componentes.`Id_tarjetaVideo`]]>
+	</queryString>
+	<field name="componentes_codigo" class="java.lang.Integer"/>
+	<field name="componentes_procesador" class="java.lang.Double"/>
+	<field name="componentes_marcaProce" class="java.lang.String"/>
+	<field name="componentes_placaMadre" class="java.lang.String"/>
+	<field name="componentes_fuentePoder" class="java.lang.Boolean"/>
+	<field name="componentes_fechaCreacion" class="java.sql.Date"/>
+	<field name="componentes_Id_tarjetaVideo" class="java.lang.Integer"/>
+	<field name="tarjetavideo_id" class="java.lang.Integer"/>
+	<field name="tarjetavideo_nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="29" width="40" height="20" uuid="7b9b6ff3-5770-4cca-b806-ac713281c913"/>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="29" width="62" height="20" uuid="7fe4d886-c532-433b-a241-d63cf24fd227"/>
+				<text><![CDATA[procesador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="29" width="48" height="20" uuid="b6fa3cc2-6602-467f-99e9-1c684ea2c2cb"/>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="29" width="90" height="20" uuid="d490a30c-0aed-4bd6-87ad-e1db5b63d6a5"/>
+				<text><![CDATA[Placa madre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="29" width="91" height="20" uuid="cf230967-7711-4ad9-9ba7-a7a3e46433fc"/>
+				<text><![CDATA[Fuente de poder]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="29" width="98" height="20" uuid="ba8a52a2-2805-4a3c-8611-f7e4c0c2bdab"/>
+				<text><![CDATA[Fecha de creacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="29" width="126" height="20" uuid="285258c0-fd87-4ecc-b090-0ed1704cb2d2"/>
+				<text><![CDATA[Tarjeta de video]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="40" height="20" uuid="d9e70be0-2251-4df5-bb1f-a9f2935326f5"/>
+				<textFieldExpression><![CDATA[$F{componentes_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="62" height="20" uuid="8ce00931-d7c9-46ba-b4de-7b87b54f9f08"/>
+				<textFieldExpression><![CDATA[$F{componentes_procesador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="0" width="48" height="20" uuid="1ce43a01-6997-4e30-9a1b-803ebed89724"/>
+				<textFieldExpression><![CDATA[$F{componentes_marcaProce}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="90" height="20" uuid="45255b31-f6fb-43e3-aa46-d067c85a5a7e"/>
+				<textFieldExpression><![CDATA[$F{componentes_placaMadre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="91" height="20" uuid="ff3bbec3-5764-4a3e-a420-35a7fec4465d"/>
+				<textFieldExpression><![CDATA[$F{componentes_fuentePoder}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="98" height="20" uuid="3944d5bb-ab2b-410d-b831-594d03bed201"/>
+				<textFieldExpression><![CDATA[$F{componentes_fechaCreacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="0" width="126" height="20" uuid="23f74114-e240-4dc4-bcc6-95b88da92089"/>
+				<textFieldExpression><![CDATA[$F{tarjetavideo_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="43" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
